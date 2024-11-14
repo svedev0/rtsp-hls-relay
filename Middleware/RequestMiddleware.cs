@@ -24,7 +24,8 @@ public class RequestMiddleware(RequestDelegate next)
 		context.Response.OnCompleted(() =>
 		{
 			TimeSpan elapsed = Stopwatch.GetElapsedTime(startTime);
-			Console.WriteLine($"Request processed in {elapsed.TotalMilliseconds} ms");
+			int elapsedMs = (int)elapsed.TotalMilliseconds;
+			Console.WriteLine($"Request processed in {elapsedMs} ms");
 			return Task.CompletedTask;
 		});
 

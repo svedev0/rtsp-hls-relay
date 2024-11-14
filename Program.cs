@@ -17,6 +17,7 @@ public class Program
 		var builder = WebApplication.CreateBuilder(args);
 		builder.Services.AddHostedService<FFMpegService>();
 		builder.Logging.ClearProviders().AddSimpleConsole();
+		builder.Logging.SetMinimumLevel(LogLevel.Warning);
 
 		var app = builder.Build();
 		app.UseMiddleware<RequestMiddleware>();

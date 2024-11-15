@@ -59,6 +59,11 @@ public static class FFMpegCoreExtensions
 		return opts.WithCustomArgument($"-fflags +{string.Join("+", flags)}");
 	}
 
+	public static FFAO ShowStats(this FFAO opts)
+	{
+		return opts.WithCustomArgument("-stats");
+	}
+
 	public static FFAO StartAtZero(this FFAO opts)
 	{
 		return opts.WithCustomArgument("-start_at_zero");

@@ -1,8 +1,10 @@
+.github/
 .idea/
 .vs/
 
 bin/
 obj/
+Properties/
 
 .env
 

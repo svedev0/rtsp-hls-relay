@@ -17,7 +17,6 @@ public class RequestMiddleware(RequestDelegate next)
 		context.Response.OnStarting(() =>
 		{
 			context.Response.Headers.Server = "CustomServer";
-			context.Response.Headers.Accept = "application/json";
 			return Task.CompletedTask;
 		});
 

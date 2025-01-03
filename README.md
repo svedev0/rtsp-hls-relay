@@ -1,6 +1,8 @@
 # rtsp-hls-relay
 
-Create a .env file in the root of the project with the following content:
+### An RTSP to HLS relay server
+
+Before building the project, create a .env file in the project root with the following content:
 
 ```
 STREAM_URI='rtsp://ip:port'

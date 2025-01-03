@@ -80,6 +80,14 @@ public class FFMpegService(IHostApplicationLifetime lifetime) : IHostedService
 			..Directory.GetFiles(streamCache, "*.ts"),
 			..Directory.GetFiles(streamCache, "*.m3u8"),
 		];
-		files.ToList().ForEach(File.Delete);
+
+		foreach (string file in files)
+		{
+			try
+			{
+				File.Delete(file);
+			}
+			catch { }
+		}
 	}
 }
